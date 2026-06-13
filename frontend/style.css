@@ -1,0 +1,294 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f1f5f9;
+    color:#1e293b;
+}
+
+.sidebar{
+    position:fixed;
+    width:250px;
+    height:100vh;
+    background:#0f172a;
+    color:white;
+    padding:30px 20px;
+}
+
+.sidebar h2{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.sidebar p{
+    color:#cbd5e1;
+    margin-bottom:30px;
+}
+
+.sidebar nav{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.sidebar a{
+    text-decoration:none;
+    color:white;
+    padding:12px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.sidebar a:hover{
+    background:#1e293b;
+}
+
+.main{
+    margin-left:250px;
+    padding:30px;
+}
+
+.hero{
+    background:linear-gradient(135deg,#2563eb,#1e3a8a);
+    color:white;
+    padding:30px;
+    border-radius:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#dbeafe;
+}
+
+.badge{
+    background:white;
+    color:#2563eb;
+    padding:10px 20px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.tarjetas{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    text-align:center;
+}
+
+.card h3{
+    color:#64748b;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#2563eb;
+    font-size:32px;
+    font-weight:bold;
+}
+
+.panel{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    margin-bottom:30px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.panel-header{
+    margin-bottom:20px;
+}
+
+.panel-header h2{
+    margin-bottom:5px;
+}
+
+.panel-header p{
+    color:#64748b;
+}
+
+.filtros{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:25px;
+}
+
+select,
+input{
+    padding:12px;
+    border:1px solid #cbd5e1;
+    border-radius:10px;
+    min-width:220px;
+    font-size:15px;
+}
+
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+.metricas{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.metrica{
+    background:#f8fafc;
+    border-left:5px solid #2563eb;
+    border-radius:12px;
+    padding:15px;
+    text-align:center;
+}
+
+.metrica span{
+    display:block;
+    margin-top:10px;
+    font-size:22px;
+    font-weight:bold;
+    color:#2563eb;
+}
+
+.recomendacion{
+    margin-bottom:20px;
+}
+
+.alerta{
+    padding:18px;
+    border-radius:12px;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.comprar{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.mantener{
+    background:#fef9c3;
+    color:#854d0e;
+}
+
+.riesgo{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.grafica-box{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+thead{
+    background:#0f172a;
+    color:white;
+}
+
+th,td{
+    padding:15px;
+    text-align:center;
+    border:1px solid #e2e8f0;
+}
+
+tbody tr:hover{
+    background:#f8fafc;
+}
+
+.riesgo-bajo{
+    color:#16a34a;
+    font-weight:bold;
+}
+
+.riesgo-medio{
+    color:#d97706;
+    font-weight:bold;
+}
+
+.riesgo-alto{
+    color:#dc2626;
+    font-weight:bold;
+}
+
+/* COMPARADOR */
+
+.comparacion{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:20px;
+    margin-top:25px;
+}
+
+.comparacion .card{
+    background:white;
+    border:2px solid #e2e8f0;
+    text-align:center;
+}
+
+.comparacion .card h3{
+    color:#2563eb;
+    font-size:34px;
+    margin-bottom:20px;
+}
+
+.comparacion .card p{
+    color:#334155;
+    font-size:20px;
+    font-weight:600;
+    margin:10px 0;
+    line-height:1.5;
+}
+
+@media(max-width:900px){
+
+    .sidebar{
+        display:none;
+    }
+
+    .main{
+        margin-left:0;
+    }
+
+    .hero{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+}

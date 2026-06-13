@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinBoard - Análisis Bursátil</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <h2>FinBoard</h2>
+        <p>Plataforma de análisis bursátil</p>
+
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#analisis">Análisis</a>
+            <a href="#prediccion">Predicción</a>
+            <a href="#ranking">Ranking</a>
+            <a href="#comparador">Comparador</a>
+        </nav>
+    </aside>
+
+    <main class="main">
+
+        <section class="hero">
+            <div>
+                <h1>Dashboard de Análisis Bursátil</h1>
+                <p>
+                    Plataforma para análisis financiero, volatilidad, riesgo,
+                    rendimiento y predicción de precios.
+                </p>
+            </div>
+
+            <div class="badge">
+                Datos reales · MySQL · API propia
+            </div>
+        </section>
+
+        <section id="dashboard" class="tarjetas"></section>
+
+        <section id="analisis" class="panel">
+            <div class="panel-header">
+                <div>
+                    <h2>Análisis por Empresa</h2>
+                    <p>Selecciona una empresa para analizar su comportamiento histórico.</p>
+                </div>
+            </div>
+
+            <div class="filtros">
+                <select id="empresa"></select>
+                <input type="date" id="fechaInicio">
+                <input type="date" id="fechaFin">
+
+                <button onclick="analizarEmpresa()">
+                    Analizar
+                </button>
+            </div>
+
+            <div id="recomendacion"></div>
+
+            <div id="metricas" class="metricas"></div>
+
+            <div class="grafica-box">
+                <canvas id="graficaPrecios"></canvas>
+            </div>
+        </section>
+
+        <section id="prediccion" class="panel">
+            <div class="panel-header">
+                <div>
+                    <h2>Predicción de Precio</h2>
+                    <p>Pronóstico con regresión lineal usando los últimos 120 días bursátiles.</p>
+                </div>
+            </div>
+
+            <div class="filtros">
+                <select id="empresaPrediccion"></select>
+
+                <select id="diasPrediccion">
+                    <option value="7">7 días</option>
+                    <option value="15">15 días</option>
+                    <option value="30">30 días</option>
+                </select>
+
+                <button onclick="generarPrediccion()">
+                    Generar predicción
+                </button>
+            </div>
+
+            <div id="resultadoPrediccion" class="metricas"></div>
+
+            <div class="grafica-box">
+                <canvas id="graficaPrediccion"></canvas>
+            </div>
+        </section>
+
+        <section id="ranking" class="panel">
+            <div class="panel-header">
+                <div>
+                    <h2>Ranking de Riesgo</h2>
+                    <p>Clasificación automática según volatilidad anualizada.</p>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Empresa</th>
+                        <th>Ticker</th>
+                        <th>Volatilidad</th>
+                        <th>VaR 95%</th>
+                        <th>Drawdown</th>
+                        <th>Sharpe</th>
+                        <th>Sortino</th>
+                        <th>Riesgo</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tablaRanking"></tbody>
+            </table>
+        </section>
+
+        <section id="comparador" class="panel">
+            <div class="panel-header">
+                <div>
+                    <h2>Comparador de Empresas</h2>
+                    <p>Compara dos empresas y genera una conclusión automática.</p>
+                </div>
+            </div>
+
+            <div class="filtros">
+                <select id="empresa1"></select>
+                <select id="empresa2"></select>
+
+                <button onclick="compararEmpresas()">
+                    Comparar
+                </button>
+            </div>
+
+            <div id="comparacion" class="comparacion"></div>
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
